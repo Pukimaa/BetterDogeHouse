@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           BetterDogeHouse
-@version        1.1.3
+@version        2.0.0
 @description    Tweaks for dogehouse.tv+
 @preprocessor   stylus
  -- AUTHOR STUFF --
@@ -13,14 +13,22 @@
 
 @var text online-text "Online Text" online
 
-@var checkbox LightMode "Light Mode" 0
+@var select  Theme "Theme" ["Default (Dracula)*", "Lantern", "Light", "Nord", "SolarizedDark", "SolarizedLight", "gruvboxDark", "gruvboxLight"]
 
-@var checkbox leavebtn "Red Leave Button" 0
+@var checkbox leavebtn "Colored Leave Button" 0
 
 ==/UserStyle== */
-/* 1.1.3
-- prettified css
-- removed Custom Emoji cuz it did not worked
+/* 2.0.0
+- added Theme as a Dropdown Menu
+- added Theme:
+    - Lantern
+    - Nord
+    - SolarizedDark
+    - SolarizedLight
+    - gruvboxDark
+    - gruvboxLight
+- The text from the DogeHouse Logo (top left corner) is now always the accent color (mostly changes if theme get changes)
+- Thanks to Freeplay for suggesting changings to some themes
 */
 @-moz-document domain("dogehouse.tv") {
     :root {
@@ -73,7 +81,35 @@
     }
     /* END ----- Inverts the color on dogehouse if yo, --color-button-textu mute/unmute yourself */
 
-    if LightMode {
+    /* THEMES */
+
+    /* DogeHouse Logo Text alway accent color */
+    a.w-full > svg:nth-child(1) > path:nth-child(1),
+    path:nth-child(2),
+    path:nth-child(3),
+    path:nth-child(4),
+    path:nth-child(5),
+    path:nth-child(6),
+    path:nth-child(7),
+    path:nth-child(8),
+    path:nth-child(9) {
+        fill: var(--color-accent);
+    }
+
+    /* Fixing weird color behauviour on some SVGs */
+    .mx-4 > svg:nth-child(1) > g:nth-child(1) > path:nth-child(2) {
+        fill: var(--color-primary-300);
+    }
+    .rotate-45 > g:nth-child(1) > path:nth-child(1),
+    .rotate-45 > g:nth-child(1) > path:nth-child(2),
+    button.bg-primary-800:nth-child(1) > svg:nth-child(1) > path:nth-child(2),
+    button.h-6:nth-child(2) > svg:nth-child(1) > path:nth-child(3) {
+        fill: var(--color-button-text);
+    }
+    /* END */
+
+    /* Actual Theme coloring */
+    if Theme is Light {
         :root {
             --color-primary-900: #ffffff;
             --color-primary-800: #f6f6f6;
@@ -85,6 +121,91 @@
             --color-button-text: #202020;
         }
     }
+
+    if Theme is Lantern {
+        :root {
+            --color-primary-900: #1b110e;
+            --color-primary-800: #261b17;
+            --color-primary-700: #291812;
+            --color-primary-600: #1b110e;
+            --color-primary-300: #f99666;
+            --color-accent: #e35b15;
+            --color-accent-hover: #e86420;
+        }
+    }
+
+    if Theme is Nord {
+        :root {
+            --color-primary-900: #2e3440;
+            --color-primary-800: #3b4252;
+            --color-primary-700: #434c5e;
+            --color-primary-600: #4c566a;
+            --color-primary-300: #81a1c1;
+            --color-accent: #5e81ac;
+            --color-accent-hover: #81a1c1;
+        }
+    }
+
+    if Theme is SolarizedDark {
+        :root {
+            --color-primary-900: #002B36;
+            --color-primary-800: #073642;
+            --color-primary-700: #586E75;
+            --color-primary-600: #657B83;
+            --color-primary-300: #9eb2b5;
+            --color-accent: #729999;
+            --color-accent-hover: #93A1A1;
+        }
+    }
+
+    if Theme is SolarizedLight {
+        :root {
+            --color-primary-900: #EFE7DC;
+            --color-primary-800: #fdf8e2;
+            --color-primary-700: #c1c1c1;
+            --color-primary-600: #839496;
+            --color-primary-300: #3b494e;
+            --color-primary-100: #495e64;
+            --color-primary-200: #2c373b;
+            --color-button-text: #2d383c;
+            --color-accent: #073642;
+            --color-accent-hover: #002B36;
+        }
+        button.outline-none:nth-child(1) {
+            background: var(--color-primary-600);
+        }
+    }
+
+    if Theme is gruvboxDark {
+        :root {
+            --color-primary-900: #1d2021;
+            --color-primary-800: #282828;
+            --color-primary-700: #3c3836;
+            --color-primary-600: #504945;
+            --color-primary-300: #95867a;
+            --color-primary-200: #9e8e80;
+            --color-primary-100: #b9a693;
+            --color-accent: #d65d0e;
+            --color-accent-hover: #fe9019;
+        }
+    }
+
+    if Theme is gruvboxLight {
+        :root {
+            --color-primary-900: #f9f5d7;
+            --color-primary-800: #fbf1c7;
+            --color-primary-700: #ebdbb2;
+            --color-primary-600: #d5c4a1;
+            --color-primary-300: #7d725f;
+            --color-primary-200: #5f564b;
+            --color-primary-100: #2c2c2c;
+            --color-accent: #d65d0e;
+            --color-accent-hover: #af3a03;
+            --color-button-text: #2c2c2c;
+        }
+    }
+
+    /* Leave Button colored */
 
     if leavebtn {
         #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button,

@@ -1,9 +1,11 @@
 # Changelog
 
 Under here short links to the versions. All Versions follow the [Semantic Versioning 2.0.0](https://semver.org).
+Newest Version: [2.0.0](#200)
 
 * MAJOR
     * [1.0.0](#100)
+    * [2.0.0](#200)
 * MINOR
     * [1.1.0](#110)
 * PATCH
@@ -27,3 +29,17 @@ Under here short links to the versions. All Versions follow the [Semantic Versio
 ### 1.1.3
 * prettified css
 * removed Custom Emoji cuz it did not worked
+
+# 2.0.0
+* added Theme as a Dropdown Menu
+* added Theme:
+    * Lantern
+    * Nord
+    * SolarizedDark
+    * SolarizedLight
+    * gruvboxDark
+    * gruvboxLight
+* The text from the DogeHouse Logo (top left corner) is now always the accent color (mostly changes if theme get changes)
+* Updated whole README (Github)
+* Thanks to Freeplay and other peeps I forgot to thank for the help
+* I made it MAJOR and not Minor because I put a lot of effort into the themes and I love (most of) them!
