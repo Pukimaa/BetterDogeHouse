@@ -12,7 +12,7 @@ Under here short links to the versions. All Versions follow the [Semantic Versio
     * [1.1.3](#113)
 
 
-## 1.0.0
+# 1.0.0
 * Initial Release
 
 ## 1.1.0
