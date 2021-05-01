@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           BetterDogeHouse
-@version        2.0.0
+@version        2.1.0
 @description    Tweaks for dogehouse.tv+
 @preprocessor   stylus
  -- AUTHOR STUFF --
@@ -13,40 +13,39 @@
 
 @var text online-text "Online Text" online
 
-@var select  Theme "Theme" ["Default (Dracula)*", "Lantern", "Light", "Nord", "SolarizedDark", "SolarizedLight", "gruvboxDark", "gruvboxLight"]
+@var select  Theme "Theme" ["Default (Dracula)*", "Lantern", "Light", "Nord", "SolarizedDark", "gruvboxDark", "gruvboxLight", "DarkCofee", "Comfy"]
 
 @var checkbox leavebtn "Colored Leave Button" 0
 
 ==/UserStyle== */
-/* 2.0.0
-- added Theme as a Dropdown Menu
+/* 2.1.0
+- removed SolarizedLIGHT Theme
 - added Theme:
-    - Lantern
-    - Nord
-    - SolarizedDark
-    - SolarizedLight
-    - gruvboxDark
-    - gruvboxLight
-- The text from the DogeHouse Logo (top left corner) is now always the accent color (mostly changes if theme get changes)
-- Thanks to Freeplay for suggesting changings to some themes
+    - DarkComfy
+    - Comfy
 */
 @-moz-document domain("dogehouse.tv") {
     :root {
         --people-text: \'people-text\';
-        --online-text: \'online-text\';
-        --emoji-path: \'emoji-path\';
+ --online-text: \'online-text\';
+ --emoji-path: \'emoji-path\';
+
     }
+
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h4 {
         visibility: hidden;
     }
+
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h4:after {
         content: var(--people-text);
         visibility: visible;
         display: block;
     }
+
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6 {
         visibility: hidden;
     }
+
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6:after {
         content: var(--online-text);
         visibility: visible;
@@ -64,25 +63,28 @@
     #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1) > div > div > button {
         background: var(--color-accent);
     }
+
     #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover,
     #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover,
     #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1):hover {
         background: var(--color-accent-hover);
     }
+
     #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.mx-1.w-11.h-6\.5.bg-accent.hover\:bg-accent-hover.text-button {
         background: var(--color-primary-800);
     }
+
     #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button {
         background: var(--color-primary-700);
     }
+
     #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.mx-1.w-11.h-6\.5.bg-accent.hover\:bg-accent-hover.text-button:hover,
     #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button:hover {
         background: var(--color-primary-600);
     }
+
     /* END ----- Inverts the color on dogehouse if yo, --color-button-textu mute/unmute yourself */
-
     /* THEMES */
-
     /* DogeHouse Logo Text alway accent color */
     a.w-full > svg:nth-child(1) > path:nth-child(1),
     path:nth-child(2),
@@ -100,14 +102,15 @@
     .mx-4 > svg:nth-child(1) > g:nth-child(1) > path:nth-child(2) {
         fill: var(--color-primary-300);
     }
+
     .rotate-45 > g:nth-child(1) > path:nth-child(1),
     .rotate-45 > g:nth-child(1) > path:nth-child(2),
     button.bg-primary-800:nth-child(1) > svg:nth-child(1) > path:nth-child(2),
     button.h-6:nth-child(2) > svg:nth-child(1) > path:nth-child(3) {
         fill: var(--color-button-text);
     }
-    /* END */
 
+    /* END */
     /* Actual Theme coloring */
     if Theme is Light {
         :root {
@@ -171,6 +174,7 @@
             --color-accent: #073642;
             --color-accent-hover: #002B36;
         }
+
         button.outline-none:nth-child(1) {
             background: var(--color-primary-600);
         }
@@ -205,13 +209,42 @@
         }
     }
 
-    /* Leave Button colored */
+    if Theme is DarkCofee {
+        :root {
+            --color-primary-900: #221f1b;
+            --color-primary-800: #36312a;
+            --color-primary-700: #3a352e;
+            --color-primary-600: #332f29;
+            --color-primary-300: #979390;
+            --color-primary-200: #b5b3b1;
+            --color-primary-100: #ceccca;
+            --color-accent: #e18114;
+            --color-accent-hover: #f58c14;
+        }
+    }
 
+    if Theme is Comfy {
+        :root {
+            --color-primary-900: #101320;
+            --color-primary-800: #1e2233;
+            --color-primary-700: #191f2e;
+            --color-primary-600: #23283d;
+            --color-primary-300: #8c9195;
+            --color-primary-200: #9ca1a6;
+            --color-primary-100: #c1c7cc;
+            --color-accent: #4E5D94;
+            --color-accent-hover: #7289DA;
+        }
+    }
+
+
+    /* Leave Button colored */
     if leavebtn {
         #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button,
         #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button {
             background: var(--color-accent);
         }
+
         #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button:hover,
         #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button:hover {
             background: var(--color-accent-hover);

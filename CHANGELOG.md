@@ -1,13 +1,14 @@
 # Changelog
 
 Under here short links to the versions. All Versions follow the [Semantic Versioning 2.0.0](https://semver.org).
-Newest Version: [2.0.0](#200)
+Newest Version: [2.1.0](#210)
 
 * MAJOR
     * [1.0.0](#100)
     * [2.0.0](#200)
 * MINOR
     * [1.1.0](#110)
+    * [2.1.0](#210)
 * PATCH
     * [1.1.1](#111)
     * [1.1.2](#112)
@@ -43,3 +44,9 @@ Newest Version: [2.0.0](#200)
 * Updated whole README (Github)
 * Thanks to Freeplay and other peeps I forgot to thank for the help
 * I made it MAJOR and not Minor because I put a lot of effort into the themes and I love (most of) them!
+
+## 2.1.0
+* removed SolarizedLight Theme
+* Added new Themes:
+    * DarkCofee
+    * Comfy
