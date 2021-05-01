@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           BetterDogeHouse
-@version        1.1.2
+@version        1.1.3
 @description    Tweaks for dogehouse.tv+
 @preprocessor   stylus
  -- AUTHOR STUFF --
 @namespace      Pukima
 @author         Pukima (https://pukimaa.github.io)
-@homepageURL    https://pukima.site
+@homepageURL    https://github.com/Pukimaa/BetterDogeHouse
 
  -- VARS --
 @var text people-text "People Text" People
@@ -15,65 +15,60 @@
 
 @var checkbox LightMode "Light Mode" 0
 
-@var checkbox CustomEmoji "Custom Emoji in Chatbar" 0
-
-@var text emoji-path "Emoji Path in Chatbar" M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M15.5,8A1.5,1.5 0 0,1 17,9.5A1.5,1.5 0 0,1 15.5,11A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 15.5,8M8.5,8A1.5,1.5 0 0,1 10,9.5A1.5,1.5 0 0,1 8.5,11A1.5,1.5 0 0,1 7,9.5A1.5,1.5 0 0,1 8.5,8M12,17.5C9.67,17.5 7.69,16.04 6.89,14H17.11C16.3,16.04 14.33,17.5 12,17.5Z
-
 @var checkbox leavebtn "Red Leave Button" 0
 
 ==/UserStyle== */
-/* 1.1.2
-- Softer Text color for Light Mode
+/* 1.1.3
+- prettified css
+- removed Custom Emoji cuz it did not worked
 */
-@-moz-document domain("dogehouse.tv"){
+@-moz-document domain("dogehouse.tv") {
     :root {
         --people-text: \'people-text\';
-		--online-text: \'online-text\';
-		--emoji-path: \'emoji-path\';
+        --online-text: \'online-text\';
+        --emoji-path: \'emoji-path\';
     }
-
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h4 {
         visibility: hidden;
     }
-
     #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h4:after {
         content: var(--people-text);
         visibility: visible;
         display: block;
     }
-	
-	#main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6 {
+    #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6 {
         visibility: hidden;
-	}
-	
-	#main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6:after {
-		content: var(--online-text);
+    }
+    #main > div:nth-child(1) > div.pb-5.w-full.flex.flex-col.flex-1.overflow-y-auto > h6:after {
+        content: var(--online-text);
         visibility: visible;
         display: block;
-	}
-    
+    }
+
     .rounded-full {
         border-radius: 10px;
     }
 
     /* Inverts the color on dogehouse if you mute/unmute yourself */
-    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5, #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5, #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1) > div > div > button, #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1) {
+    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5,
+    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5,
+    #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1),
+    #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1) > div > div > button {
         background: var(--color-accent);
     }
-
-    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover, #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover, #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1):hover {
+    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover,
+    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.text-primary-100.mx-1.w-11.h-6\.5:hover,
+    #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button:nth-child(1):hover {
         background: var(--color-accent-hover);
     }
-
     #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.mx-1.w-11.h-6\.5.bg-accent.hover\:bg-accent-hover.text-button {
         background: var(--color-primary-800);
     }
-
-#main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button {
-background: var(--color-primary-700);
-}
-
-    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.mx-1.w-11.h-6\.5.bg-accent.hover\:bg-accent-hover.text-button:hover, #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button:hover {
+    #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button {
+        background: var(--color-primary-700);
+    }
+    #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > div > button.flex.bg-primary-800.transition.duration-200.ease-in-out.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.mx-1.w-11.h-6\.5.bg-accent.hover\:bg-accent-hover.text-button:hover,
+    #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > div > button.flex.bg-primary-700.transition.duration-200.ease-in-out.hover\:bg-primary-600.h-6.w-6.cursor-pointer.justify-center.items-center.rounded.bg-accent.hover\:bg-accent-hover.text-button:hover {
         background: var(--color-primary-600);
     }
     /* END ----- Inverts the color on dogehouse if yo, --color-button-textu mute/unmute yourself */
@@ -91,24 +86,14 @@ background: var(--color-primary-700);
         }
     }
 
-	if CustomEmoji {
-		#main > div:nth-child(3) > div.flex.flex-1.w-full.mb-7.overflow-y-auto.bg-primary-800.h-full.rounded-8 > div > form > div.flex.items-stretch > div > div > svg > path {
-			d: path(
-				var(--emoji-path)
-			);
-			transform: scale(0.73);
-		}
-	}
-
-	if leavebtn {
-		#main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button, 
-		#main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button {
-			background: var(--color-accent);
-		}
-		
-		#main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button:hover,
- 		#main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button:hover {
-        background: var(--color-accent-hover);
-    	}
-	}
+    if leavebtn {
+        #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button,
+        #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button {
+            background: var(--color-accent);
+        }
+        #main > div.flex.flex-col.flex-1.w-full > div.sticky.bottom-0.pb-7.bg-primary-900 > div > div > button:hover,
+        #main > div:nth-child(3) > div.flex.flex-1.flex-col.overflow-y-auto > div:nth-child(1) > div > div.flex.flex-row > button:hover {
+            background: var(--color-accent-hover);
+        }
+    }
 }
