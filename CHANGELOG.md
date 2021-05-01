@@ -9,6 +9,7 @@ Under here short links to the versions. All Versions follow the [Semantic Versio
 * PATCH
     * [1.1.1](#111)
     * [1.1.2](#112)
+    * [1.1.3](#113)
 
 
 ## 1.0.0
@@ -22,3 +23,7 @@ Under here short links to the versions. All Versions follow the [Semantic Versio
 
 ### 1.1.2
 * softer Text Color for Light Mode
+
+### 1.1.3
+* prettified css
+* removed Custom Emoji cuz it did not worked
