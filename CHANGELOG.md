@@ -1,7 +1,7 @@
 # Changelog
 
 Under here short links to the versions. All Versions follow the [Semantic Versioning 2.0.0](https://semver.org).
-Newest Version: [2.1.0](#210)
+Newest Version: [2.1.1](#211)
 
 * MAJOR
     * [1.0.0](#100)
@@ -13,6 +13,7 @@ Newest Version: [2.1.0](#210)
     * [1.1.1](#111)
     * [1.1.2](#112)
     * [1.1.3](#113)
+    * [2.1.1](#211)
 
 
 # 1.0.0
@@ -50,3 +51,8 @@ Newest Version: [2.1.0](#210)
 * Added new Themes:
     * DarkCofee
     * Comfy
+
+### 2.1.1
+* Added new Theme:
+    * Slate (based on GitHub's design language)
+* fixed weird color behauviour if you deafen yourself

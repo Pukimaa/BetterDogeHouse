@@ -1,6 +1,23 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@========@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=-=======@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--=@@@@@--=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@--=@@@=--=@@@@@@@@@@@@@=--==@@=--==@@@@@@@@@@@@@@@@@=@@@=--@@@@=--=@@@@@@==@@@@@@@@@===@@@@@@@@@@@==@@@@@@--=@@@@@--=@@@@@===@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@=-=====-=@@@=-==@==-=@@=--==@@=--==@@=-==@====@@=-===@@@=--@@@@@=--=@@=-====-==@@==-=====--=@@=-=====-=@@@--======--=@@=--====-=@@=--@@@=--@@=-=====@@=======-=@
+@=-=@@@====@@--=======@@@--@@@@@--@@@=--=======@@=-=@@@@@=--@@@@@=--@@--=@@@@=--=@--=@@@@@--=@=--========@@--=@@@@=--=@=--@@@@@=-=@=--@@@=--@@=======@@--========
+@--=@@@@=-=@@=-=@@@==@@@@--@@@@@--@@@@--=@@@==@@@=-=@@@@@=--=@===-=@@@=--=@@==-=@@=--=@@@=--=@@=-==@@===@@@--=@@@@@--=@@=-=@@@=--=@@--=@@=--@@@==@=--=@=--=@@===@
+@=========@@@@=======@@@@====@@@====@@@=======@@@==@@@@@@========@@@@@@@======@@@@@@======--=@@@@======@@@@===@@@@@===@@@@======@@@@@======@@@@======@@@@======@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@===@@==-=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=====@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
 /* ==UserStyle==
 @name           BetterDogeHouse
-@version        2.1.0
+@version        2.1.1
 @description    Tweaks for dogehouse.tv+
 @preprocessor   stylus
  -- AUTHOR STUFF --
@@ -13,22 +30,21 @@
 
 @var text online-text "Online Text" online
 
-@var select  Theme "Theme" ["Default (Dracula)*", "Lantern", "Light", "Nord", "SolarizedDark", "gruvboxDark", "gruvboxLight", "DarkCofee", "Comfy"]
+@var select  Theme "Theme" ["Default (Dracula)*", "Lantern", "Light", "Nord", "SolarizedDark", "gruvboxDark", "gruvboxLight", "DarkCofee", "Comfy", "Slate"]
 
 @var checkbox leavebtn "Colored Leave Button" 0
 
 ==/UserStyle== */
-/* 2.1.0
-- removed SolarizedLIGHT Theme
-- added Theme:
-    - DarkComfy
-    - Comfy
+/* 2.1.1
+- added new Theme:
+    - Slate (based on GitHub's design language)
+- fixed weird color behauviour if you deafen yourself
+                                           
 */
 @-moz-document domain("dogehouse.tv") {
     :root {
         --people-text: \'people-text\';
  --online-text: \'online-text\';
- --emoji-path: \'emoji-path\';
 
     }
 
@@ -106,7 +122,8 @@
     .rotate-45 > g:nth-child(1) > path:nth-child(1),
     .rotate-45 > g:nth-child(1) > path:nth-child(2),
     button.bg-primary-800:nth-child(1) > svg:nth-child(1) > path:nth-child(2),
-    button.h-6:nth-child(2) > svg:nth-child(1) > path:nth-child(3) {
+    button.h-6:nth-child(2) > svg:nth-child(1) > path:nth-child(3),
+    button.bg-primary-800:nth-child(1) > svg:nth-child(1) > path:nth-child(3) {
         fill: var(--color-button-text);
     }
 
@@ -214,7 +231,7 @@
             --color-primary-900: #221f1b;
             --color-primary-800: #36312a;
             --color-primary-700: #3a352e;
-            --color-primary-600: #332f29;
+            --color-primary-600: #2b2728;
             --color-primary-300: #979390;
             --color-primary-200: #b5b3b1;
             --color-primary-100: #ceccca;
@@ -230,10 +247,44 @@
             --color-primary-700: #191f2e;
             --color-primary-600: #23283d;
             --color-primary-300: #8c9195;
-            --color-primary-200: #9ca1a6;
+            --color-primary-200: #b3b8be;
             --color-primary-100: #c1c7cc;
             --color-accent: #4E5D94;
             --color-accent-hover: #7289DA;
+        }
+    }
+
+    if Theme is Slate {
+        :root {
+            --color-primary-900: #24292E;
+            --color-primary-800: #2A3036;
+            --color-primary-700: #1D2125;
+            --color-primary-600: #2F363D;
+            --color-primary-300: #8D9697;
+            --color-primary-200: #d5e4e6;
+            --color-primary-100: #EFF5F5;
+            --color-accent: #2E85E9;
+            --color-accent-hover: #0366D6;
+        }
+
+        .rounded,
+        .rounded-lg,
+        .rounded-md,
+        .rounded-8,
+        .rounded-t-8,
+        .rounded-b-8,
+        .rc-slider-rail,
+        .rc-slider-track,
+        flex flex-col mt-3 overflow-y-auto scrollbar-thin scrollbar-thumb-primary-700 overflow-x-hidden {
+            border-radius: 0px;
+        }
+
+        .rounded-full {
+            border-radius: 3px;
+        }
+
+        .box-content {
+            bottom: 0.0001rem !important;
         }
     }
 
