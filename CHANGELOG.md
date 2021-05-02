@@ -55,4 +55,4 @@ Newest Version: [2.1.1](#211)
 ### 2.1.1
 * Added new Theme:
     * Slate (based on GitHub's design language)
-* fixed weird color behauviour if you deafen yourself
+* fixed weird color behaviour if you deafen yourself
